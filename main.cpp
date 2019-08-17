@@ -1,28 +1,28 @@
 
 #include<iostream>
-#include<string>
+#include<cstdio>
 
 using namespace std;
 
 int main(){
-
-    string a;
-    getline(cin,a);
+    char a[255];
     bool aux=false;
-    for(int i=0;i<a.size();i++)
-    {
-        if(a[i]=='"' && aux==false)
+    while(scanf("%s",a)!=EOF){
+        for(int i=0;i<255;i++)
         {
-            aux=true;
-            cout<<"``";
+            if(a[i]=='"' && aux==false)
+            {
+                aux=true;
+                cout<<"``";
+            }
+            else if(a[i]=='"' && aux==true){
+                aux=false;
+                cout<<"''";
+            }
+            else
+                cout<<a[i];
         }
-        else if(a[i]=='"' && aux==true){
-            aux=false;
-            cout<<"''";
-        }
-        else
-            cout<<a[i];
-    }
+    };
     cout<<endl;
 
     return 0;
