@@ -1,14 +1,15 @@
 
 #include<iostream>
-#include<cstdio>
+#include<string.h>
+#include<stdio.h>
 
 using namespace std;
 
 int main(){
-    char a[255];
+    string a;
     bool aux=false;
-    while(scanf("%s",a)!=EOF){
-        for(int i=0;i<255;i++)
+    while(getline(cin,a)){
+        for(int i=0;i<a.size();i++)
         {
             if(a[i]=='"' && aux==false)
             {
